@@ -7,6 +7,7 @@ import Icon from './assets/restart.svg';
 import { useEffect, useState } from 'react';
 import { GridItemType } from './types/GridItemType';
 import { items } from './data/items'
+import GridItem from './components/GridItem';
 
 function App() {
 
@@ -52,6 +53,11 @@ function App() {
 
   }
 
+   const handleItemClick = (index: number)=> {
+      console.log('oi');
+      
+   }
+
   return (
     <C.Container>
       <C.Info>
@@ -68,7 +74,13 @@ function App() {
      
       <C.GridArea>
         <C.Grid>
-
+            {gridItems.map((item, index)=> 
+               <GridItem
+                key={index}
+                item={item}
+                onClick={()=> handleItemClick(index)}
+               />
+            )}
         </C.Grid>
       </C.GridArea>
     </C.Container>
