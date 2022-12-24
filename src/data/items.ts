@@ -1,6 +1,6 @@
 
 import android from '../assets/android.svg';
-import caminha from '../assets/caminha.svg';
+import caminha from '../assets/caminhao.svg';
 import disney from '../assets/disney.svg';
 import estrela from '../assets/estrela.svg';
 import gasolina from '../assets/gasolina.svg';
