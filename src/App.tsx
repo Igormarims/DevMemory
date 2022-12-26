@@ -8,19 +8,31 @@ import { useEffect, useState } from 'react';
 import { GridItemType } from './types/GridItemType';
 import { items } from './data/items'
 import GridItem from './components/GridItem';
+import { formatTimeElapsed } from './utils/formatTimeElapsed'
 
 function App() {
 
-  const [paying, setPlaying] = useState<boolean>(false);
+  const [playing, setPlaying] = useState<boolean>(false);
   const [timeElapsed, setTimeElapsed] = useState<number>(0);
   const [moveCount, setMoveCount] = useState<number>(0);
   const [shownCount, setShownCount] = useState<number>(0);
   const [gridItems, setGridItems] = useState<GridItemType[]>([]);
 
+
   useEffect(()=> {
   resetAndCreateGrid();
   },[]
 );
+
+useEffect(()=> {
+  const timer = setInterval(()=> {
+       if(playing)
+    setTimeElapsed(timeElapsed + 1);
+  },1000
+  
+  )
+  return ()=> clearInterval(timer);
+  },[playing, timeElapsed]);
 
   const resetAndCreateGrid = ()=> {
     setTimeElapsed(0);
@@ -66,7 +78,7 @@ function App() {
         </C.LogoLink>
          
         <C.InfoArea>
-          <InfoItem label='Tempo'value='00:00'/>
+          <InfoItem label='Tempo'value={formatTimeElapsed(timeElapsed)}/>
           <InfoItem label='Movimentos'value='0'/>
         </C.InfoArea>
         <Button label='Reiniciar' icon={Icon} onClick={resetAndCreateGrid}/>

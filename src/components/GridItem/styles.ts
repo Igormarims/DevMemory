@@ -14,8 +14,13 @@ export const Container = styled.div<ContainerProps> `
    background-color: ${props => props.showBackground? '#1550FF': '#E2E3E3'};
 `;
 
-export const Icon = styled.img `
+type Props = {
+  opaci?:number;
+}
+
+export const Icon = styled.img<Props> `
   width:40px;
   heigth: 40px;
+  opacity: ${(props)=> props.opaci ?? 1 }
   
 `;

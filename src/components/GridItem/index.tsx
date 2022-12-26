@@ -15,7 +15,7 @@ const GridItem = ({item , onClick}: Props)=> {
      showBackground={item.permanentShown || item.shown}
       >
          {item.permanentShown === false && item.shown === false &&
-            <C.Icon src={b7} alt="" /> 
+            <C.Icon src={b7} alt="" opaci={0.1} /> 
          }
          {(item.permanentShown || item.shown) && item.item != null &&
             <C.Icon src={items[item.item].icon} alt={items[item.item].name} /> }
