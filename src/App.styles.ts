@@ -7,7 +7,7 @@ import styled from 'styled-components'
      margin: auto;
      display: flex;
      padding: 50px 0;  
-     border: 1px solid red;
+     
 
      @media (max-width: 750px){
         flex-direction: column;
@@ -18,7 +18,7 @@ import styled from 'styled-components'
     display: flex;
     flex-direction: column;
     width: auto;
-    border: 1px solid red;
+   
      
     @media (max-width: 750px){
        margin-bottom: 50px;
@@ -28,14 +28,14 @@ import styled from 'styled-components'
  `;
 
  export const LogoLink = styled.a `
- border: 1px solid black;
+
  
  `;
 
  export const InfoArea = styled.div `
  margin: 10px 0
  width: 100%;
- border: 1px solid green;
+ 
 
  @media (max-width: 750px){
    display: flex;
@@ -48,7 +48,7 @@ import styled from 'styled-components'
  flex: 1;
  display: flex;
  justify-content: flex-end;
- border: 1px solid blue;
+ 
 
  @media (max-width: 750px){
     justify-content: center;

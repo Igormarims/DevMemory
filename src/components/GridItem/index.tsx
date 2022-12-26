@@ -10,13 +10,16 @@ import {items} from '../../data/items';
 
 const GridItem = ({item , onClick}: Props)=> {
  return(
-    <C.Container onClick={onClick}>
+    <C.Container 
+    onClick={onClick}
+     showBackground={item.permanentShown || item.shown}
+      >
          {item.permanentShown === false && item.shown === false &&
             <C.Icon src={b7} alt="" /> 
          }
          {(item.permanentShown || item.shown) && item.item != null &&
-            <C.Icon src={items[item.item].icon} alt={items[item.item].name} />         }
-      ...
+            <C.Icon src={items[item.item].icon} alt={items[item.item].name} /> }
+     
     </C.Container>
  )
 }
